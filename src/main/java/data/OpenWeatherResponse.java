@@ -1,6 +1,6 @@
 package data;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Datenklasse OpenWeatherResponse
@@ -9,14 +9,14 @@ import java.util.List;
  */
 public class OpenWeatherResponse {
 
-    private List<Liste> list;
+    private ArrayList<Liste> list;
     private City city;
 
-    public List<Liste> getList() {
+    public ArrayList<Liste> getList() {
         return list;
     }
 
-    public void setList(List<Liste> list) {
+    public void setList(ArrayList<Liste> list) {
         this.list = list;
     }
 

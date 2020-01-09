@@ -36,7 +36,6 @@ public class OpenWeather_Weather_Client {
         WebTarget target = client.target(uri);
         Response result = target.request().accept(MediaType.APPLICATION_JSON).get();
         String jsondaten = result.readEntity(String.class);
-        System.out.println(jsondaten);
         OpenWeatherResponse owr = gson.fromJson(jsondaten, OpenWeatherResponse.class);    
         return owr;
     }
