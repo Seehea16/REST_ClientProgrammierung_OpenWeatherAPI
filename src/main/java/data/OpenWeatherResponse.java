@@ -10,7 +10,7 @@ import java.util.List;
 public class OpenWeatherResponse {
 
     private List<Liste> list;
-    private List<City> city;
+    private City city;
 
     public List<Liste> getList() {
         return list;
@@ -20,11 +20,11 @@ public class OpenWeatherResponse {
         this.list = list;
     }
 
-    public List<City> getCity() {
+    public City getCity() {
         return city;
     }
 
-    public void setCity(List<City> city) {
+    public void setCity(City city) {
         this.city = city;
     }
 
