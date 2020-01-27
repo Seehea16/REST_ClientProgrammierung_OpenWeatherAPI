@@ -275,9 +275,9 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btDay3" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btDay5" min="-2" pref="100" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btDay4" min="-2" pref="100" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btDay5" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -294,13 +294,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btDay5" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btToday" max="32767" attributes="0"/>
                           <Component id="btDay2" alignment="0" max="32767" attributes="0"/>
                           <Component id="btDay3" alignment="0" max="32767" attributes="0"/>
                           <Component id="btDay4" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btDay5" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="231" max="32767" attributes="0"/>
               </Group>

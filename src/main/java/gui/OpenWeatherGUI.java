@@ -58,11 +58,10 @@ public class OpenWeatherGUI extends javax.swing.JFrame {
         day3 = new ArrayList<>();
         day4 = new ArrayList<>();
         day5 = new ArrayList<>();
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
         ArrayList<Liste> list = owr.getList();
         for(int i = 0; i < list.size(); i++) {
             Liste l = list.get(i);
-            LocalDateTime ld = LocalDateTime.parse(l.getDt_txt(), DateTimeFormatter.ofPattern("yyyy-MM-DD HH:mm:ss")); 
+            LocalDateTime ld = LocalDateTime.parse(l.getDt_txt(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")); 
             String dayOfWeek = ld.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.GERMANY);
             if(dayOfWeek.equals(LocalDateTime.now().getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.GERMANY))) {
                 day1.add(l);
@@ -330,9 +329,9 @@ public class OpenWeatherGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btDay3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btDay5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(btDay4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btDay5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(paWeatherForecastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(paWeatherForecastLayout.createSequentialGroup()
@@ -345,12 +344,12 @@ public class OpenWeatherGUI extends javax.swing.JFrame {
             .addGroup(paWeatherForecastLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(paWeatherForecastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btDay5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(paWeatherForecastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btToday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btDay2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btDay3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btDay4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btDay5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btDay4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(231, Short.MAX_VALUE))
             .addGroup(paWeatherForecastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paWeatherForecastLayout.createSequentialGroup()
@@ -438,7 +437,7 @@ public class OpenWeatherGUI extends javax.swing.JFrame {
     private void miAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAddActionPerformed
         try {
             String destination = JOptionPane.showInputDialog(this, "Bitte Ort eingeben:", 
-                    "Destination hinzugüfen", JOptionPane.INFORMATION_MESSAGE);
+                    "Destination hinzufüen", JOptionPane.INFORMATION_MESSAGE);
             if(destination != null && !destination.equals("")) {
                 this.model.add(destination);
             }
@@ -486,6 +485,7 @@ public class OpenWeatherGUI extends javax.swing.JFrame {
      */
     private void btTodayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTodayActionPerformed
         setdaten(day1);
+        
         setIconsAndDescriptions(day1);
     }//GEN-LAST:event_btTodayActionPerformed
 
@@ -585,6 +585,30 @@ public class OpenWeatherGUI extends javax.swing.JFrame {
                 String uhrzeit = l.getDt_txt().substring(11, 16);
                 switch(i) {
                     case 1:
+                        icon1.setIcon(null);
+                        description1.setText("");
+                        uhrzeit1.setText("");
+                        icon2.setIcon(null);
+                        description2.setText("");
+                        uhrzeit2.setText("");
+                        icon3.setIcon(null);
+                        description3.setText("");
+                        uhrzeit3.setText("");
+                        icon4.setIcon(null);
+                        description4.setText("");
+                        uhrzeit4.setText("");
+                        icon5.setIcon(null);
+                        description5.setText("");
+                        uhrzeit5.setText("");
+                        icon6.setIcon(null);
+                        description6.setText("");
+                        uhrzeit6.setText("");
+                        icon7.setIcon(null);
+                        description7.setText("");
+                        uhrzeit7.setText("");
+                        icon8.setIcon(null);
+                        description8.setText("");
+                        uhrzeit8.setText("");
                         icon1.setIcon(icon);
                         description1.setText(l.getWeather().get(0).getDescription());
                         uhrzeit1.setText(uhrzeit);
@@ -666,8 +690,6 @@ public class OpenWeatherGUI extends javax.swing.JFrame {
             btDay3.setText(sdf.format(c.getTime()));
             c.add(Calendar.DAY_OF_WEEK, 1);
             btDay4.setText(sdf.format(c.getTime()));
-            c.add(Calendar.DAY_OF_WEEK, 1);
-            btDay5.setText(sdf.format(c.getTime()));
             c.add(Calendar.DAY_OF_WEEK, 1);
             btDay5.setText(sdf.format(c.getTime()));
         } catch (Exception ex) {
